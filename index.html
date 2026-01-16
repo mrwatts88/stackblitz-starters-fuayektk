@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Dealer Academy | Your Path to a High-Paying Casino Career</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #e0e0e0;
+        background: #0a0a0a;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+        padding: 1.5rem 0;
+        border-bottom: 2px solid #d4af37;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        background: linear-gradient(135deg, #d4af37, #f4e4a6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: #e0e0e0;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 500;
+      }
+
+      .nav-links a:hover {
+        color: #d4af37;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #0f3a2e 0%, #1a1a1a 100%);
+        padding: 8rem 0 6rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 50%,
+            rgba(212, 175, 55, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(15, 58, 46, 0.3) 0%,
+            transparent 50%
+          );
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #ffffff, #d4af37);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+        color: #b0b0b0;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #d4af37, #f4e4a6);
+        color: #0a0a0a;
+        padding: 1rem 3rem;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5);
+      }
+
+      /* Section Styles */
+      section {
+        padding: 5rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #ffffff;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      }
+
+      /* Why Become a Dealer */
+      .benefits {
+        background: #121212;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .benefit-card {
+        background: linear-gradient(135deg, #1a1a1a, #141414);
+        padding: 2.5rem;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s;
+        border: 1px solid #2a2a2a;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .benefit-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #d4af37, #f4e4a6);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-5px);
+        border-color: #d4af37;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+      }
+
+      .benefit-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .benefit-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .benefit-card h3 {
+        color: #d4af37;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .benefit-card p {
+        color: #b0b0b0;
+      }
+
+      /* Programs */
+      .programs {
+        background: #0a0a0a;
+      }
+
+      .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .program-card {
+        background: linear-gradient(135deg, #0f3a2e, #1a1a1a);
+        padding: 2rem;
+        border-radius: 15px;
+        border: 1px solid #0f3a2e;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+
+      .program-card:hover {
+        transform: scale(1.05);
+        border-color: #d4af37;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+      }
+
+      .program-card h3 {
+        color: #d4af37;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+      }
+
+      .program-card p {
+        color: #b0b0b0;
+        margin-bottom: 1rem;
+      }
+
+      .program-duration {
+        display: inline-block;
+        background: rgba(212, 175, 55, 0.1);
+        color: #d4af37;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+
+      /* How It Works */
+      .how-it-works {
+        background: #121212;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .step {
+        text-align: center;
+        position: relative;
+      }
+
+      .step-number {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #d4af37, #f4e4a6);
+        color: #0a0a0a;
+        border-radius: 50%;
+        line-height: 80px;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .step h3 {
+        color: #ffffff;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .step p {
+        color: #b0b0b0;
+      }
+
+      /* Testimonials */
+      .testimonials {
+        background: #0a0a0a;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .testimonial {
+        background: linear-gradient(135deg, #1a1a1a, #141414);
+        padding: 2rem;
+        border-radius: 15px;
+        border-left: 4px solid #d4af37;
+        position: relative;
+      }
+
+      .testimonial::before {
+        content: '"';
+        position: absolute;
+        top: 1rem;
+        left: 1.5rem;
+        font-size: 4rem;
+        color: #d4af37;
+        opacity: 0.2;
+        font-family: Georgia, serif;
+      }
+
+      .testimonial-text {
+        color: #e0e0e0;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-author {
+        color: #d4af37;
+        font-weight: bold;
+      }
+
+      .testimonial-role {
+        color: #808080;
+        font-size: 0.9rem;
+      }
+
+      /* Final CTA */
+      .final-cta {
+        background: linear-gradient(135deg, #0f3a2e 0%, #1a1a1a 100%);
+        text-align: center;
+        padding: 6rem 0;
+      }
+
+      .final-cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+      }
+
+      .final-cta p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #b0b0b0;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #d4af37;
+        font-size: 1.1rem;
+      }
+
+      /* Footer */
+      footer {
+        background: #0a0a0a;
+        text-align: center;
+        padding: 2rem 0;
+        border-top: 1px solid #2a2a2a;
+        color: #808080;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-content {
+        animation: fadeInUp 1s ease-out;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .nav-links {
+          gap: 1rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div class="logo">THE DEALER ACADEMY</div>
+        <ul class="nav-links">
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>Master the Tables.<br />Change Your Life.</h1>
+        <p>
+          Launch a high-paying career as a professional casino dealer in just
+          weeks. No experience required. Expert instruction. Guaranteed
+          placement assistance.
+        </p>
+        <a href="#contact" class="cta-button">Start Your Journey</a>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <h2 class="section-title">Why Become a Casino Dealer?</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">💰</div>
+            <h3>Excellent Income</h3>
+            <p>
+              Earn $50,000-$100,000+ annually with tips. Top dealers at premium
+              casinos make even more.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">⏰</div>
+            <h3>Flexible Schedule</h3>
+            <p>
+              Choose your shifts. Work when you want. Perfect for students,
+              parents, or anyone seeking work-life balance.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🚀</div>
+            <h3>Fast Entry</h3>
+            <p>
+              Get certified and start working in 4-8 weeks. No college degree
+              required. Quick path to a real career.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🎯</div>
+            <h3>Job Security</h3>
+            <p>
+              Casinos always need skilled dealers. Recession-resistant industry
+              with constant demand.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🌟</div>
+            <h3>Exciting Environment</h3>
+            <p>
+              Work in world-class casinos. Meet interesting people. Every shift
+              is different and engaging.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">📈</div>
+            <h3>Career Growth</h3>
+            <p>
+              Advance to pit boss, floor supervisor, or casino management. Clear
+              promotion paths available.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs" id="programs">
+      <div class="container">
+        <h2 class="section-title">Our Training Programs</h2>
+        <div class="programs-grid">
+          <div class="program-card">
+            <h3>♠️ Blackjack</h3>
+            <p>
+              Master the world's most popular casino game. Learn dealing
+              techniques, payouts, and player management.
+            </p>
+            <span class="program-duration">4 Weeks</span>
+          </div>
+          <div class="program-card">
+            <h3>♥️ Poker</h3>
+            <p>
+              Deal Texas Hold'em, Omaha, and tournament poker. High-demand skill
+              with premium earning potential.
+            </p>
+            <span class="program-duration">6 Weeks</span>
+          </div>
+          <div class="program-card">
+            <h3>🎯 Roulette</h3>
+            <p>
+              Learn European and American roulette. Perfect for beginners
+              seeking an elegant game.
+            </p>
+            <span class="program-duration">3 Weeks</span>
+          </div>
+          <div class="program-card">
+            <h3>🎲 Craps</h3>
+            <p>
+              Master the most exciting game on the floor. Complex but incredibly
+              rewarding to deal.
+            </p>
+            <span class="program-duration">8 Weeks</span>
+          </div>
+          <div class="program-card">
+            <h3>🃏 Baccarat</h3>
+            <p>
+              Deal the game of high rollers. Simple mechanics, sophisticated
+              environment, excellent tips.
+            </p>
+            <span class="program-duration">3 Weeks</span>
+          </div>
+          <div class="program-card">
+            <h3>🏆 Master Dealer</h3>
+            <p>
+              Complete certification in all major games. Become the most
+              sought-after dealer in any casino.
+            </p>
+            <span class="program-duration">16 Weeks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Enroll & Learn</h3>
+            <p>
+              Choose your program and start training with experienced casino
+              professionals. Hands-on practice with real equipment in our
+              professional training facility.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Get Certified</h3>
+            <p>
+              Pass your certification exam and receive your dealer license. We
+              prepare you thoroughly for gaming commission requirements.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Start Dealing</h3>
+            <p>
+              Land your first job with our placement assistance. We have
+              partnerships with major casinos nationwide looking for our
+              graduates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">Success Stories</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <p class="testimonial-text">
+              I went from unemployed to making $70K a year in just 3 months. The
+              instructors at Dealer Academy gave me real-world skills and
+              confidence. Best career decision I ever made.
+            </p>
+            <div class="testimonial-author">Marcus Rodriguez</div>
+            <div class="testimonial-role">
+              Blackjack & Poker Dealer, Bellagio
+            </div>
+          </div>
+          <div class="testimonial">
+            <p class="testimonial-text">
+              As a single mom, I needed flexibility and good income. Dealing
+              gives me both. The training was thorough and the job placement
+              help was incredible. I was hired before I even graduated!
+            </p>
+            <div class="testimonial-author">Sarah Chen</div>
+            <div class="testimonial-role">Roulette Dealer, MGM Grand</div>
+          </div>
+          <div class="testimonial">
+            <p class="testimonial-text">
+              I've been dealing for 5 years now and just got promoted to floor
+              supervisor. It all started at Dealer Academy. The foundation they
+              gave me opened every door.
+            </p>
+            <div class="testimonial-author">James Mitchell</div>
+            <div class="testimonial-role">Floor Supervisor, Caesars Palace</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="contact">
+      <div class="container">
+        <h2>Ready to Deal Your Way to Success?</h2>
+        <p>
+          Join hundreds of graduates who transformed their careers. Classes
+          starting monthly.
+        </p>
+        <a href="tel:1-800-DEAL-PRO" class="cta-button">Enroll Today</a>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📞</span>
+            <span>1-800-DEAL-PRO</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <span>info@dealeracademy.com</span>
+          </div>
+          <div class="contact-item">
+            <span>📍</span>
+            <span>Las Vegas, NV</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2026 The Dealer Academy. All rights reserved. Licensed by
+          Nevada Gaming Commission.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
