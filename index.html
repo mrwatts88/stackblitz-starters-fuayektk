@@ -444,13 +444,91 @@
           gap: 1rem;
         }
       }
+      .nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-toggle .bar {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #e0e0e0;
+  margin: 6px 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  nav {
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Hide links by default on mobile */
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 20px;
+    left: 20px;
+    display: none;               /* collapsed */
+    flex-direction: column;
+    gap: 0;
+    padding: 12px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  .nav-links.open {
+    display: flex;               /* expanded */
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 10px;
+    border-radius: 10px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(212, 175, 55, 0.08);
+  }
+
+  /* Optional: tighten header spacing on mobile */
+  header {
+    padding: 1rem 0;
+  }
+}
     </style>
   </head>
   <body>
     <header>
       <nav class="container">
         <div class="logo">THE DEALERS ACADEMY</div>
-        <ul class="nav-links">
+      
+        <!-- Mobile toggle -->
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      
+        <ul class="nav-links" id="navLinks">
           <li><a href="#programs">Programs</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -686,5 +764,45 @@
         </p>
       </div>
     </footer>
+    <script>
+      (function () {
+        const btn = document.querySelector('.nav-toggle');
+        const links = document.getElementById('navLinks');
+    
+        if (!btn || !links) return;
+    
+        const closeMenu = () => {
+          links.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+        };
+    
+        const openMenu = () => {
+          links.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.setAttribute('aria-label', 'Close menu');
+        };
+    
+        btn.addEventListener('click', () => {
+          const isOpen = links.classList.contains('open');
+          isOpen ? closeMenu() : openMenu();
+        });
+    
+        // Close after clicking a link (mobile)
+        links.addEventListener('click', (e) => {
+          if (e.target && e.target.tagName === 'A') closeMenu();
+        });
+    
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeMenu();
+        });
+    
+        // Ensure correct state on resize
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768) closeMenu();
+        });
+      })();
+    </script>
   </body>
 </html>
