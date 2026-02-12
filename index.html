@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Dealer Academy | Your Path to a High-Paying Casino Career</title>
     <style>
+      /* Icon sizing */
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: -4px;
+}
+
+/* Poker chip color variants */
+.chip-white  { color: #ffffff; filter: drop-shadow(0 0 2px rgba(255,255,255,0.6)); }
+.chip-pink   { color: #ff4da6; }
+.chip-red    { color: #d40000; }
+.chip-green  { color: #0f7a3d; }
+.chip-black  { color: #000000; }
+
       * {
         margin: 0;
         padding: 0;
@@ -517,6 +531,32 @@
     </style>
   </head>
   <body>
+    <!-- ICON SPRITE: Place directly after <body> -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+
+  <!-- LOCK -->
+  <symbol id="i-lock" viewBox="0 0 24 24">
+    <rect x="5" y="10" width="14" height="10" rx="2"
+          fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M8 10V7a4 4 0 0 1 8 0v3"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
+  </symbol>
+
+  <!-- POKER CHIP -->
+  <symbol id="i-chip" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" fill="currentColor"/>
+    <circle cx="12" cy="12" r="5" fill="#0a0a0a"/>
+    <path d="M12 3v4M12 17v4M3 12h4M17 12h4
+             M5.2 5.2l2.8 2.8M16 16l2.8 2.8
+             M18.8 5.2L16 8M8 16l-2.8 2.8"
+          stroke="#0a0a0a"
+          stroke-width="2"
+          stroke-linecap="round"/>
+  </symbol>
+
+</svg>
+
     <header>
       <nav class="container">
         <div class="logo">THE DEALER ACADEMY</div>
@@ -575,7 +615,7 @@
             </p>
           </div>
           <div class="benefit-card">
-            <div class="benefit-icon">🎯</div>
+            <div class="benefit-icon"><svg class="icon"><use href="#i-lock"></use></svg></div>
             <h3>Security</h3>
             <p>
               Casinos always need skilled dealers. Recession-resistant industry
