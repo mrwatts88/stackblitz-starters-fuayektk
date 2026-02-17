@@ -5,170 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Dealer Academy | Your Path to a High-Paying Casino Career</title>
     <style>
+      /* ========= BRAND COLORS ========= */
+      :root {
+        --dark: #00210d;   /* replaces blacks */
+        --green: #00380b;  /* replaces original green accents */
+        --yellow: #ffe57d; /* replaces gold/yellows */
+        --cream: #fffaeb;  /* replaces whites */
+        --text: #fffaeb;
+        --muted: rgba(255, 250, 235, 0.75);
+        --muted2: rgba(255, 250, 235, 0.55);
+        --border: rgba(255, 250, 235, 0.16);
+        --shadowY: rgba(255, 229, 125, 0.22);
+      }
+    
       /* Icon sizing */
-.icon {
-  width: 32px;
-  height: 32px;
-  vertical-align: -4px;
-}
-
-/* Poker chip color variants */
-.chip-white  { color: #ffffff; filter: drop-shadow(0 0 2px rgba(255,255,255,0.6)); }
-.chip-pink   { color: #ff4da6; }
-.chip-red    { color: #d40000; }
-.chip-green  { color: #0f7a3d; }
-.chip-black  { color: #000000; }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      .icon {
+        width: 32px;
+        height: 32px;
+        vertical-align: -4px;
       }
-
+    
+      /* Poker chip color variants (leave these literal chip colors) */
+      .chip-white  { color: #ffffff; filter: drop-shadow(0 0 2px rgba(255,255,255,0.6)); }
+      .chip-pink   { color: #ff4da6; }
+      .chip-red    { color: #d40000; }
+      .chip-green  { color: #0f7a3d; }
+      .chip-black  { color: #000000; }
+    
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+    
       body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: Georgia, serif;
         line-height: 1.6;
-        color: #e0e0e0;
-        background: #0a0a0a;
+        color: var(--text);
+        background: var(--dark);
       }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
+    
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
       /* Header */
       header {
-        background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+        background: linear-gradient(135deg, var(--dark) 0%, #001a0a 100%);
         padding: 1.5rem 0;
-        border-bottom: 2px solid #d4af37;
+        border-bottom: 2px solid var(--yellow);
         position: sticky;
         top: 0;
         z-index: 100;
-        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+        box-shadow: 0 4px 12px var(--shadowY);
       }
-
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
+    
+      nav { display: flex; justify-content: space-between; align-items: center; }
+    
       .logo {
         font-size: 1.8rem;
         font-weight: bold;
-        background: linear-gradient(135deg, #d4af37, #f4e4a6);
+        background: linear-gradient(135deg, var(--yellow), var(--cream));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         letter-spacing: 1px;
       }
-
-      .nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-      }
-
+    
+      .nav-links { display: flex; gap: 2rem; list-style: none; }
+    
       .nav-links a {
-        color: #e0e0e0;
+        color: var(--cream);
         text-decoration: none;
         transition: color 0.3s;
         font-weight: 500;
       }
-
-      .nav-links a:hover {
-        color: #d4af37;
-      }
-
-      /* Hero Section */
+    
+      .nav-links a:hover { color: var(--yellow); }
+    
+      /* Hero */
       .hero {
-        background: linear-gradient(135deg, #0f3a2e 0%, #1a1a1a 100%);
+        background: linear-gradient(135deg, var(--green) 0%, var(--dark) 100%);
         padding: 8rem 0 6rem;
         text-align: center;
         position: relative;
         overflow: hidden;
       }
-
+    
       .hero::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(
-            circle at 20% 50%,
-            rgba(212, 175, 55, 0.1) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 80% 80%,
-            rgba(15, 58, 46, 0.3) 0%,
-            transparent 50%
-          );
+        inset: 0;
+        background:
+          radial-gradient(circle at 20% 50%, rgba(255, 229, 125, 0.16) 0%, transparent 55%),
+          radial-gradient(circle at 80% 80%, rgba(0, 56, 11, 0.40) 0%, transparent 55%);
       }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-      }
-
+    
+      .hero-content { position: relative; z-index: 1; animation: fadeInUp 1s ease-out; }
+    
       .hero h1 {
         font-size: 3.5rem;
         margin-bottom: 1.5rem;
-        background: linear-gradient(135deg, #ffffff, #d4af37);
+        background: linear-gradient(135deg, var(--cream), var(--yellow));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         font-weight: 800;
         line-height: 1.2;
       }
-
+    
       .hero p {
         font-size: 1.3rem;
         margin-bottom: 2.5rem;
-        color: #b0b0b0;
+        color: var(--muted);
         max-width: 700px;
         margin-left: auto;
         margin-right: auto;
       }
-
+    
       .cta-button {
         display: inline-block;
-        background: linear-gradient(135deg, #d4af37, #f4e4a6);
-        color: #0a0a0a;
+        background: linear-gradient(135deg, var(--yellow), var(--cream));
+        color: var(--dark);
         padding: 1rem 3rem;
         text-decoration: none;
         border-radius: 50px;
         font-weight: bold;
         font-size: 1.1rem;
         transition: all 0.3s;
-        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        box-shadow: 0 4px 20px rgba(255, 229, 125, 0.28);
         text-transform: uppercase;
         letter-spacing: 1px;
       }
-
-      .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5);
-      }
-
-      /* Section Styles */
-      section {
-        padding: 5rem 0;
-      }
-
+    
+      .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(255, 229, 125, 0.42); }
+    
+      section { padding: 5rem 0; }
+    
       .section-title {
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 3rem;
-        color: #ffffff;
+        color: var(--cream);
         position: relative;
         padding-bottom: 1rem;
       }
-
+    
       .section-title::after {
         content: '';
         position: absolute;
@@ -177,223 +153,170 @@
         transform: translateX(-50%);
         width: 100px;
         height: 3px;
-        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        background: linear-gradient(90deg, transparent, var(--yellow), transparent);
       }
-
-      /* Why Become a Dealer */
-      .benefits {
-        background: #121212;
-      }
-
+    
+      /* Benefits (was #121212) */
+      .benefits { background: var(--dark); }
+    
       .benefits-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2.5rem;
       }
-
+    
       .benefit-card {
-        background: linear-gradient(135deg, #1a1a1a, #141414);
+        background: linear-gradient(135deg, rgba(255, 250, 235, 0.07), rgba(255, 250, 235, 0.04));
         padding: 2.5rem;
         border-radius: 15px;
         text-align: center;
         transition: all 0.3s;
-        border: 1px solid #2a2a2a;
+        border: 1px solid var(--border);
         position: relative;
         overflow: hidden;
       }
-
+    
       .benefit-card::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 0; left: 0; right: 0;
         height: 3px;
-        background: linear-gradient(90deg, #d4af37, #f4e4a6);
+        background: linear-gradient(90deg, var(--yellow), var(--cream));
         transform: scaleX(0);
         transition: transform 0.3s;
       }
-
+    
       .benefit-card:hover {
         transform: translateY(-5px);
-        border-color: #d4af37;
-        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        border-color: rgba(255, 229, 125, 0.65);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       }
-
-      .benefit-card:hover::before {
-        transform: scaleX(1);
-      }
-
-      .benefit-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-
-      .benefit-card h3 {
-        color: #d4af37;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-
-      .benefit-card p {
-        color: #b0b0b0;
-      }
-
-      /* Programs */
-      .program {
-        background: #0a0a0a;
-      }
-
+    
+      .benefit-card:hover::before { transform: scaleX(1); }
+    
+      .benefit-icon { font-size: 3rem; margin-bottom: 1rem; }
+    
+      .benefit-card h3 { color: var(--yellow); margin-bottom: 1rem; font-size: 1.5rem; }
+    
+      .benefit-card p { color: var(--muted); }
+    
+      /* Program (was #0a0a0a) */
+      .program { background: var(--dark); }
+    
       .program-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
       }
-
+    
       .program-card {
-        background: linear-gradient(135deg, #0f3a2e, #1a1a1a);
+        background: linear-gradient(135deg, var(--green), rgba(255, 250, 235, 0.05));
         padding: 2rem;
         border-radius: 15px;
-        border: 1px solid #0f3a2e;
+        border: 1px solid rgba(255, 229, 125, 0.20);
         transition: all 0.3s;
         cursor: pointer;
       }
-
+    
       .program-card:hover {
         transform: scale(1.05);
-        border-color: #d4af37;
-        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        border-color: rgba(255, 229, 125, 0.70);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       }
-
-      .program-card h3 {
-        color: #d4af37;
-        margin-bottom: 1rem;
-        font-size: 1.8rem;
-      }
-
-      .program-card p {
-        color: #b0b0b0;
-        margin-bottom: 1rem;
-      }
-
+    
+      .program-card h3 { color: var(--yellow); margin-bottom: 1rem; font-size: 1.8rem; }
+    
+      .program-card p { color: var(--muted); margin-bottom: 1rem; }
+    
       .program-duration {
         display: inline-block;
-        background: rgba(212, 175, 55, 0.1);
-        color: #d4af37;
+        background: rgba(255, 229, 125, 0.12);
+        color: var(--yellow);
         padding: 0.5rem 1rem;
         border-radius: 20px;
         font-size: 0.9rem;
         font-weight: bold;
+        border: 1px solid rgba(255, 229, 125, 0.18);
       }
-
-      /* How It Works */
-      .how-it-works {
-        background: #121212;
-      }
-
+    
+      /* How It Works (was #121212) */
+      .how-it-works { background: var(--dark); }
+    
       .steps {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 3rem;
         margin-top: 3rem;
       }
-
-      .step {
-        text-align: center;
-        position: relative;
-      }
-
+    
+      .step { text-align: center; position: relative; }
+    
       .step-number {
         display: inline-block;
         width: 80px;
         height: 80px;
-        background: linear-gradient(135deg, #d4af37, #f4e4a6);
-        color: #0a0a0a;
+        background: linear-gradient(135deg, var(--yellow), var(--cream));
+        color: var(--dark);
         border-radius: 50%;
         line-height: 80px;
         font-size: 2rem;
         font-weight: bold;
         margin-bottom: 1.5rem;
-        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        box-shadow: 0 4px 20px rgba(255, 229, 125, 0.28);
       }
-
-      .step h3 {
-        color: #ffffff;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-
-      .step p {
-        color: #b0b0b0;
-      }
-
-      /* Testimonials */
-      .testimonials {
-        background: #0a0a0a;
-      }
-
+    
+      .step h3 { color: var(--cream); margin-bottom: 1rem; font-size: 1.5rem; }
+    
+      .step p { color: var(--muted); }
+    
+      /* Testimonials (was #0a0a0a, cards were #1a/#141) */
+      .testimonials { background: var(--dark); }
+    
       .testimonials-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
       }
-
+    
       .testimonial {
-        background: linear-gradient(135deg, #1a1a1a, #141414);
+        background: linear-gradient(135deg, rgba(255, 250, 235, 0.07), rgba(255, 250, 235, 0.04));
         padding: 2rem;
         border-radius: 15px;
-        border-left: 4px solid #d4af37;
+        border-left: 4px solid var(--yellow);
         position: relative;
+        border-top: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
       }
-
+    
       .testimonial::before {
         content: '"';
         position: absolute;
         top: 1rem;
         left: 1.5rem;
         font-size: 4rem;
-        color: #d4af37;
-        opacity: 0.2;
+        color: var(--yellow);
+        opacity: 0.18;
         font-family: Georgia, serif;
       }
-
-      .testimonial-text {
-        color: #e0e0e0;
-        font-style: italic;
-        margin-bottom: 1.5rem;
-        position: relative;
-        z-index: 1;
-      }
-
-      .testimonial-author {
-        color: #d4af37;
-        font-weight: bold;
-      }
-
-      .testimonial-role {
-        color: #808080;
-        font-size: 0.9rem;
-      }
-
-      /* Final CTA */
+    
+      .testimonial-text { color: var(--cream); font-style: italic; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+    
+      .testimonial-author { color: var(--yellow); font-weight: bold; }
+    
+      .testimonial-role { color: var(--muted2); font-size: 0.9rem; }
+    
+      /* Final CTA (was green->black gradient) */
       .final-cta {
-        background: linear-gradient(135deg, #0f3a2e 0%, #1a1a1a 100%);
+        background: linear-gradient(135deg, var(--green) 0%, var(--dark) 100%);
         text-align: center;
         padding: 6rem 0;
       }
-
-      .final-cta h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        color: #ffffff;
-      }
-
-      .final-cta p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        color: #b0b0b0;
-      }
-
+    
+      .final-cta h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--cream); }
+    
+      .final-cta p { font-size: 1.2rem; margin-bottom: 2rem; color: var(--muted); }
+    
       .contact-info {
         display: flex;
         justify-content: center;
@@ -401,173 +324,136 @@
         margin-top: 3rem;
         flex-wrap: wrap;
       }
-
+    
       .contact-item {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        color: #d4af37;
+        color: var(--yellow);
         font-size: 1.1rem;
       }
-
+    
       /* Footer */
       footer {
-        background: #0a0a0a;
+        background: var(--dark);
         text-align: center;
         padding: 2rem 0;
-        border-top: 1px solid #2a2a2a;
-        color: #808080;
+        border-top: 1px solid var(--border);
+        color: var(--muted2);
       }
-
-      /* Animations */
+    
       @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
       }
-
-      .hero-content {
-        animation: fadeInUp 1s ease-out;
-      }
-
+    
       /* Responsive */
       @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 2.5rem;
-        }
-
-        .hero p {
-          font-size: 1.1rem;
-        }
-
-        .nav-links {
-          gap: 1rem;
-        }
-
-        .section-title {
-          font-size: 2rem;
-        }
-
-        .contact-info {
-          flex-direction: column;
-          gap: 1rem;
-        }
+        .hero h1 { font-size: 2.5rem; }
+        .hero p { font-size: 1.1rem; }
+        .nav-links { gap: 1rem; }
+        .section-title { font-size: 2rem; }
+        .contact-info { flex-direction: column; gap: 1rem; }
       }
+    
+      /* Mobile nav toggle */
       .nav-toggle {
-  display: none;
-  background: transparent;
-  border: 1px solid #2a2a2a;
-  border-radius: 10px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.nav-toggle .bar {
-  display: block;
-  width: 26px;
-  height: 2px;
-  background: #e0e0e0;
-  margin: 6px 0;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-/* Mobile layout */
-@media (max-width: 768px) {
-  nav {
-    position: relative;
-  }
-
-  .nav-toggle {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Hide links by default on mobile */
-  .nav-links {
-    position: absolute;
-    top: calc(100% + 12px);
-    right: 20px;
-    left: 20px;
-    display: none;               /* collapsed */
-    flex-direction: column;
-    gap: 0;
-    padding: 12px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-    border: 1px solid #2a2a2a;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-  }
-
-  .nav-links.open {
-    display: flex;               /* expanded */
-  }
-
-  .nav-links li {
-    list-style: none;
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 12px 10px;
-    border-radius: 10px;
-  }
-
-  .nav-links a:hover {
-    background: rgba(212, 175, 55, 0.08);
-  }
-
-  /* Optional: tighten header spacing on mobile */
-  header {
-    padding: 1rem 0;
-  }
-}
+        display: none;
+        background: transparent;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+      }
+    
+      .nav-toggle .bar {
+        display: block;
+        width: 26px;
+        height: 2px;
+        background: var(--cream);
+        margin: 6px 0;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+    
+      @media (max-width: 768px) {
+        nav { position: relative; }
+    
+        .nav-toggle {
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        .nav-links {
+          position: absolute;
+          top: calc(100% + 12px);
+          right: 20px;
+          left: 20px;
+          display: none;
+          flex-direction: column;
+          gap: 0;
+          padding: 12px;
+          background: linear-gradient(135deg, var(--dark) 0%, #001a0a 100%);
+          border: 1px solid var(--border);
+          border-radius: 14px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+        }
+    
+        .nav-links.open { display: flex; }
+    
+        .nav-links li { list-style: none; }
+    
+        .nav-links a {
+          display: block;
+          padding: 12px 10px;
+          border-radius: 10px;
+        }
+    
+        .nav-links a:hover { background: rgba(255, 229, 125, 0.12); }
+    
+        header { padding: 1rem 0; }
+      }
     </style>
+    
   </head>
+
   <body>
     <!-- ICON SPRITE: Place directly after <body> -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+      <!-- LOCK -->
+      <symbol id="i-lock" viewBox="0 0 24 24">
+        <rect x="5" y="10" width="14" height="10" rx="2"
+              fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M8 10V7a4 4 0 0 1 8 0v3"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
+      </symbol>
 
-  <!-- LOCK -->
-  <symbol id="i-lock" viewBox="0 0 24 24">
-    <rect x="5" y="10" width="14" height="10" rx="2"
-          fill="none" stroke="currentColor" stroke-width="2"/>
-    <path d="M8 10V7a4 4 0 0 1 8 0v3"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
-  </symbol>
-
-  <!-- POKER CHIP -->
-  <symbol id="i-chip" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="9" fill="currentColor"/>
-    <circle cx="12" cy="12" r="5" fill="#0a0a0a"/>
-    <path d="M12 3v4M12 17v4M3 12h4M17 12h4
-             M5.2 5.2l2.8 2.8M16 16l2.8 2.8
-             M18.8 5.2L16 8M8 16l-2.8 2.8"
-          stroke="#0a0a0a"
-          stroke-width="2"
-          stroke-linecap="round"/>
-  </symbol>
-
-</svg>
+      <!-- POKER CHIP -->
+      <symbol id="i-chip" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" fill="currentColor"/>
+        <circle cx="12" cy="12" r="5" fill="#0a0a0a"/>
+        <path d="M12 3v4M12 17v4M3 12h4M17 12h4
+                 M5.2 5.2l2.8 2.8M16 16l2.8 2.8
+                 M18.8 5.2L16 8M8 16l-2.8 2.8"
+              stroke="#0a0a0a"
+              stroke-width="2"
+              stroke-linecap="round"/>
+      </symbol>
+    </svg>
 
     <header>
       <nav class="container">
         <div class="logo">THE DEALER ACADEMY</div>
-      
+
         <!-- Mobile toggle -->
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </button>
-      
+
         <ul class="nav-links" id="navLinks">
           <li><a href="#program">Program</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
@@ -619,7 +505,7 @@
             <h3>Job Security</h3>
             <p>
               Casinos always need skilled dealers. Recession-resistant industry
-              with constant demand. Wherever life takes you, your dealing skill will be a valuable safety net! 
+              with constant demand. Wherever life takes you, your dealing skill will be a valuable safety net!
             </p>
           </div>
           <div class="benefit-card">
@@ -651,42 +537,41 @@
             <p>
               We offer everything in one seamless masterclass! <br><br> The Dealer Academy educates through a structured five-level progression designed to develop casino dealers systematically. As you advance, you are exposed to increasingly complex aspects of dealing and mindset principals. The class covers Blackjack, Roulette, Baccarat, Ultimate Texas Hold'em, Pai Gow, Free bet, Three card poker, and various common side bets! You will graduate with a complete understanding of both the dealer role and your function within a casino team!
             </p>
-            
           </div>
+
           <div class="program-card">
-            <h3><svg class="icon chip-white"><use href="#i-chip"></use></svg> Level 1 'White Chip' </h3>
+            <h3><svg class="icon chip-white"><use href="#i-chip"></use></svg> Level 1 'White Chip'</h3>
             <p>
               Introduction | Fundamentals | Slow | Exact.<br><br> This is the break in level. We will get your hands and mind familiar with chips and money and you will start building correct physical habits, mental discipline, and procedural understanding from ground zero. We want everyone to have a strong base to build upon. The begining of your career starts here!
             </p>
-           
           </div>
+
           <div class="program-card">
             <h3><svg class="icon chip-pink"><use href="#i-chip"></use></svg> Level 2 'Pink Chip'</h3>
             <p>
               Completed Fundamentals | Efficient | Ramp up to dealing BJ. <br><br> You are now executing all fundamentals more efficiently. You will begin dealing your first hands of Blackjack. This is where it gets fun!
             </p>
-            
           </div>
+
           <div class="program-card">
             <h3><svg class="icon chip-red"><use href="#i-chip"></use></svg> Level 3 'Red Chip'</h3>
             <p>
               Side Bets | Control your Game | Chain of Command. <br><br> You will deal a full blackjack game with confidence, clarity, and procedural dominance. You will be guided and shown the casino chain of command and will build on your mindset fundamentals. This is the level we dive into side bets!
             </p>
-            
           </div>
+
           <div class="program-card">
             <h3><svg class="icon chip-green"><use href="#i-chip"></use></svg> Level 4 'Green Chip'</h3>
             <p>
               Carnival Games+ | Disruptions | Excellence. <br><br> At this level you will be tested under stress, distraction, and scrutiny. We will continue to improve efficiency and become competent at dealing carnival games (UTH, PGP, FB, TCP), and round out your knowledge of side bets.
             </p>
-           
           </div>
+
           <div class="program-card">
             <h3><svg class="icon chip-black"><use href="#i-chip"></use></svg> Level 5 'Black Chip'</h3>
             <p>
-              Complete Dealer | Audition-Ready | Roulette & Baccarat. <br><br> The final level! Time to obtain full professional readiness for casino hiring. you will learn Roulette and Baccarat. When you make it through the rigors of level 5, you are a dealer fully and completly and should be confident in any audition! 
+              Complete Dealer | Audition-Ready | Roulette & Baccarat. <br><br> The final level! Time to obtain full professional readiness for casino hiring. you will learn Roulette and Baccarat. When you make it through the rigors of level 5, you are a dealer fully and completly and should be confident in any audition!
             </p>
-            
           </div>
         </div>
       </div>
@@ -700,7 +585,7 @@
             <div class="step-number">1</div>
             <h3>Consultation and Enrollment</h3>
             <p>
-              We will first have a consultation to determine if the program is a good fit for you. If together we decide to move forward, we will enroll you for an upcoming date when there is availability. 
+              We will first have a consultation to determine if the program is a good fit for you. If together we decide to move forward, we will enroll you for an upcoming date when there is availability.
             </p>
           </div>
           <div class="step">
@@ -731,20 +616,18 @@
               When I was 21 I set out from home without a college degree and got into the casino industry. Best decision of my life. The casino has provided me with exceptional income and a sense of belonging!
             </p>
             <div class="testimonial-author">Matt</div>
-            <div class="testimonial-role">
-              Blackjack & Poker Dealer
-            </div>
+            <div class="testimonial-role">Blackjack & Poker Dealer</div>
           </div>
           <div class="testimonial">
             <p class="testimonial-text">
-              I was separated from my job at Amazon and wanted a career change, I needed something different but I didnt know where or what that next thing would be. The Dealer Academy answered that question. After just one meeting to discuss what opportunities were available as a dealer I was sold! 
+              I was separated from my job at Amazon and wanted a career change, I needed something different but I didnt know where or what that next thing would be. The Dealer Academy answered that question. After just one meeting to discuss what opportunities were available as a dealer I was sold!
             </p>
             <div class="testimonial-author">Gladys</div>
             <div class="testimonial-role">New recruit</div>
           </div>
           <div class="testimonial">
             <p class="testimonial-text">
-              I've been in the casino industry 14 years now and have done almost everything there is to do in the table games department. Starting from dealing all the games to then transitioning into a supervisory roll and now into managment. I am currently a shift manager of table games in Arizona. I credit my positive casino experiences to the amazing training I was given at the start and my willingness to constantly seek improvment. I wanted to pass along these 'secrets' to others, so I decided to start this school! 
+              I've been in the casino industry 14 years now and have done almost everything there is to do in the table games department. Starting from dealing all the games to then transitioning into a supervisory roll and now into managment. I am currently a shift manager of table games in Arizona. I credit my positive casino experiences to the amazing training I was given at the start and my willingness to constantly seek improvment. I wanted to pass along these 'secrets' to others, so I decided to start this school!
             </p>
             <div class="testimonial-author">Phillip McCormic</div>
             <div class="testimonial-role">Table Games shift manager, Arizona</div>
@@ -756,13 +639,19 @@
     <section class="final-cta" id="contact">
       <div class="container">
         <h2>Ready to Deal Your Way to Success?</h2>
-        <a href="sms:16189797839?body=I%20was%20just%20visiting%20the%20website%20and%20I%20am%20interested%20in%20hearing%20more%20about%20The%20Dealer%20Academy" class="cta-button"> Click here for more info </a>
+        <a
+          href="sms:16189797839?body=I%20was%20just%20visiting%20the%20website%20and%20I%20am%20interested%20in%20hearing%20more%20about%20The%20Dealer%20Academy"
+          class="cta-button"
+        >
+          Click here for more info
+        </a>
+
         <div class="contact-info">
           <div class="contact-item">
             <span>📞</span>
             <span> TEXT 1-618-979-7839 </span>
           </div>
-          <div class="contact-item"> 
+          <div class="contact-item">
             <span>✉️</span>
             <span>enroll@thedealeracademy.com</span>
           </div>
@@ -776,46 +665,42 @@
 
     <footer>
       <div class="container">
-        <p>
-          &copy; 2025 The Dealer Academy. All rights reserved.
-        </p>
+        <p>&copy; 2025 The Dealer Academy. All rights reserved.</p>
       </div>
     </footer>
+
     <script>
       (function () {
         const btn = document.querySelector('.nav-toggle');
         const links = document.getElementById('navLinks');
-    
+
         if (!btn || !links) return;
-    
+
         const closeMenu = () => {
           links.classList.remove('open');
           btn.setAttribute('aria-expanded', 'false');
           btn.setAttribute('aria-label', 'Open menu');
         };
-    
+
         const openMenu = () => {
           links.classList.add('open');
           btn.setAttribute('aria-expanded', 'true');
           btn.setAttribute('aria-label', 'Close menu');
         };
-    
+
         btn.addEventListener('click', () => {
           const isOpen = links.classList.contains('open');
           isOpen ? closeMenu() : openMenu();
         });
-    
-        // Close after clicking a link (mobile)
+
         links.addEventListener('click', (e) => {
           if (e.target && e.target.tagName === 'A') closeMenu();
         });
-    
-        // Close on Escape
+
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape') closeMenu();
         });
-    
-        // Ensure correct state on resize
+
         window.addEventListener('resize', () => {
           if (window.innerWidth > 768) closeMenu();
         });
